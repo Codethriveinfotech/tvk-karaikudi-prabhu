@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TVK IT CELL | Admin Control Center</title>
+</head>
+<body class="admin-body">
+  
+  <!-- Header / Navigation -->
+  <header class="admin-topbar" style="position: sticky; width: 100%; top: 0; z-index: 1000; padding: 15px 0; background: rgba(198, 21, 27, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+    <div class="container admin-topbar-container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+      <div class="logo-text" style="color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; display: flex; align-items: center; gap: 10px;">
+        <span style="background: var(--poster-yellow); color: var(--poster-red); padding: 2px 8px; border-radius: 4px; font-size: 0.9rem;">IT CELL</span>
+        TVK ADMIN
+      </div>
+      <nav class="nav-links admin-topbar-nav" style="display: flex; gap: 20px; align-items: center;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Public Site</a>
+        <button id="logout-btn" style="display: none; background: var(--poster-yellow); border: none; color: var(--black); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; padding: 6px 15px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;">
+          Logout
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    
+    <!-- Login Screen -->
+    <div id="login-container" class="login-wrapper">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="lock-icon-container">
+            <i data-lucide="shield-check" class="lock-icon"></i>
+          </div>
+          <h2>TVK Admin Access</h2>
+          <p>Tamilaga Vettri Kazhagam Digital Grievance Portal</p>
+        </div>
+        
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-with-icon">
+              <i data-lucide="users" class="input-icon"></i>
+              <input type="text" id="username" placeholder="Enter admin username" required autocomplete="username">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-with-icon">
+              <i data-lucide="shield" class="input-icon"></i>
+              <input type="password" id="password" placeholder="Enter admin password" required autocomplete="current-password">
+            </div>
+          </div>
+          
+          <div id="login-error" class="error-msg" style="display: none;"></div>
+          
+          <button type="submit" class="submit-btn" id="login-submit-btn">
+            Authenticate & Enter
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard Screen -->
+    <div id="dashboard-container" class="dashboard-wrapper" style="display: none;">
+      
+      <!-- Dashboard Welcome Header -->
+      <div class="dashboard-welcome">
+        <div>
+          <h1>Welcome, Admin Specialist</h1>
+          <p>Monitor and resolve citizens' problems in real-time</p>
+        </div>
+        <div class="refresh-action">
+          <button id="refresh-btn" class="dashboard-btn btn-secondary">
+            <i data-lucide="clock"></i> Refresh Data
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card total">
+          <div class="stat-icon"><i data-lucide="clipboard-list"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Total Submissions</span>
+            <span class="stat-value" id="stat-total">0</span>
+          </div>
+        </div>
+        
+        <div class="stat-card pending">
+          <div class="stat-icon"><i data-lucide="clock"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Pending</span>
+            <span class="stat-value" id="stat-pending">0</span>
+          </div>
+        </div>
+        
+        <div class="stat-card progress">
+          <div class="stat-icon"><i data-lucide="brain-circuit"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">In Progress</span>
+            <span class="stat-value" id="stat-progress">0</span>
+          </div>
+        </div>
+        
+        <div class="stat-card resolved">
+          <div class="stat-icon"><i data-lucide="check-circle-2"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Resolved</span>
+            <span class="stat-value" id="stat-resolved">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Controls -->
+      <div class="filters-card">
+        <div class="filters-header">
+          <h3><i data-lucide="layout"></i> Filter & Search Queries</h3>
+        </div>
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label>Search Keyword</label>
+            <input type="text" id="search-input" placeholder="Search by name, ID, phone...">
+          </div>
+          <div class="filter-group">
+            <label>Status Filter</label>
+            <select id="filter-status">
+              <option value="all">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Category Filter</label>
+            <select id="filter-category">
+              <option value="all">All Categories</option>
+              <option value="roads">Roads & Infrastructure</option>
+              <option value="water">Water Supply</option>
+              <option value="electricity">Electricity</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grievance Table Card -->
+      <div class="data-table-card">
+        <div class="table-container-responsive">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Track ID</th>
+                <th>Citizen Name</th>
+                <th>Contact</th>
+                <th>Constituency</th>
+                <th>Category</th>
+                <th>Submitted On</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="grievances-tbody">
+              <!-- Dynamically populated rows -->
+              <tr class="loading-row">
+                <td colspan="8">
+                  <div class="table-loading">
+                    <span class="spinner"></span> Loading citizen submissions...
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Detail Modal Dialog -->
+  <div id="details-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-track-id">TVK-GR-2026-0000</h3>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-details-grid">
+          <div><strong>Citizen Name:</strong> <span id="modal-name"></span></div>
+          <div><strong>Phone Number:</strong> <span id="modal-phone"></span></div>
+          <div><strong>Constituency:</strong> <span id="modal-constituency"></span></div>
+          <div><strong>Category:</strong> <span id="modal-category"></span></div>
+          <div class="span-full"><strong>Submitted On:</strong> <span id="modal-date"></span></div>
+          <div class="span-full description-box">
+            <strong>Description:</strong>
+            <p id="modal-description"></p>
+          </div>
+          <div class="span-full grievance-photo-box" id="modal-photo-box" hidden>
+            <strong>Uploaded Photo:</strong>
+            <a id="modal-photo-link" href="#" target="_blank" rel="noopener">
+              <img id="modal-photo" alt="Uploaded grievance evidence">
+            </a>
+            <p id="modal-photo-name"></p>
+          </div>
+        </div>
+
+        <hr class="modal-divider">
+
+        <form id="update-grievance-form">
+          <input type="hidden" id="modal-db-id">
+          
+          <div class="form-group">
+            <label for="modal-status">Change Action Status</label>
+            <select id="modal-status" class="status-select-btn" required>
+              <option value="Pending">Pending (Awaiting Action)</option>
+              <option value="In Progress">In Progress (Investigating / Delegated)</option>
+              <option value="Resolved">Resolved (Problem fixed for citizen)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="modal-notes">Admin Notes / Resolution Remarks</label>
+            <textarea id="modal-notes" rows="4" placeholder="Enter notes here, e.g., 'Forwarded to area deputy', 'Confirmed resolution with citizen.'"></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" id="delete-grievance-btn" class="dashboard-btn btn-danger">
+              <i data-lucide="shield"></i> Delete Submission
+            </button>
+            <button type="submit" class="dashboard-btn btn-primary">
+              Save Updates
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background: white; border-top: 1px solid #ddd; padding: 20px; text-align: center; margin-top: auto;">
+    <p style="color: #666; font-size: 0.9rem;">&copy; 2026 TVK IT CELL. Secure Admin Dashboard powered by SQLite.</p>
+  </footer>
+
+  <script type="module" src="/src/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ideology | TVK Digital</title>
+  <meta name="description" content="Core values and ideology of Tamilaga Vettri Kazhagam" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Hind+Madurai:wght@400;700&display=swap');
+
+    :root {
+      --poster-red: #c6151b;
+      --poster-yellow: #fece08;
+      --poster-dark-red: #8b0000;
+      --white: #ffffff;
+      --black: #000000;
+      --grey: #f2f2f2;
+      --text-soft: #5f5f5f;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', 'Hind Madurai', sans-serif;
+      background: var(--grey);
+      color: #1a1a1a;
+    }
+
+    .tamil-text {
+      font-family: 'Hind Madurai', sans-serif;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 15px 0;
+      background: rgba(198, 21, 27, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .logo-text {
+      color: white;
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--poster-yellow);
+    }
+
+    .nav-links a.active {
+      color: var(--poster-yellow);
+      border: 1px solid var(--poster-yellow);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    .page-header {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(254, 206, 8, 0.3), transparent 30%),
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 16%),
+        linear-gradient(135deg, #6f0000 0%, var(--poster-red) 40%, #140404 100%);
+      color: white;
+      padding: 56px 0 48px;
+      margin-bottom: 56px;
+    }
+
+    .page-header::before,
+    .page-header::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .page-header::before {
+      width: 320px;
+      height: 320px;
+      top: -120px;
+      right: -70px;
+      background: rgba(254, 206, 8, 0.12);
+      filter: blur(8px);
+    }
+
+    .page-header::after {
+      width: 220px;
+      height: 220px;
+      left: -40px;
+      bottom: -90px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .page-header-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.85fr);
+      gap: 32px;
+      align-items: end;
+    }
+
+    .page-header-copy {
+      max-width: 760px;
+    }
+
+    .page-header-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--poster-yellow);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .page-header-emphasis {
+      display: block;
+      color: var(--poster-yellow);
+    }
+
+    .page-header p {
+      font-size: 1.08rem;
+      line-height: 1.78;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 720px;
+    }
+
+    .page-header-mobile-note {
+      display: none;
+      margin-top: 18px;
+      font-size: 1.02rem;
+      line-height: 1.72;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .page-header-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .page-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+    }
+
+    .page-stat strong {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .page-stat span {
+      display: block;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .page-header-panel {
+      justify-self: end;
+      width: min(100%, 330px);
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .page-header-panel-label {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .page-header-panel h2 {
+      font-size: 1.55rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .page-header-panel p {
+      max-width: none;
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .ideology-overview {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .overview-card,
+    .overview-highlight {
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    .overview-card {
+      background: linear-gradient(180deg, #fff9ec 0%, #ffffff 100%);
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      padding: 30px;
+    }
+
+    .overview-card h2,
+    .section-heading h2,
+    .section-header h2 {
+      color: var(--poster-red);
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .overview-card p,
+    .section-heading p,
+    .section-header p {
+      color: var(--text-soft);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .overview-list {
+      list-style: none;
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .overview-list li {
+      position: relative;
+      padding-left: 26px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .overview-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--poster-yellow), var(--poster-red));
+      box-shadow: 0 0 0 4px rgba(254, 206, 8, 0.18);
+    }
+
+    .overview-highlight {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #161616 0%, #390506 54%, var(--poster-red) 100%);
+      color: white;
+      padding: 30px;
+    }
+
+    .overview-highlight::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -40px;
+      top: -60px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.16);
+      filter: blur(10px);
+    }
+
+    .overview-highlight > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-highlight span {
+      display: inline-block;
+      color: var(--poster-yellow);
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .overview-highlight h3 {
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .overview-highlight p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .overview-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .overview-metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .overview-metric strong {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .overview-metric span {
+      display: block;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-heading,
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .vision-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 30px;
+      margin-bottom: 56px;
+    }
+
+    .vision-card,
+    .motto-card,
+    .commitment-card {
+      background: linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+      border-radius: 24px;
+      padding: 32px;
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+    }
+
+    .vision-card h3,
+    .motto-card h3,
+    .commitment-card h3 {
+      color: var(--poster-red);
+      font-size: 1.55rem;
+      margin-bottom: 16px;
+    }
+
+    .vision-card p,
+    .motto-card p,
+    .commitment-card p {
+      color: #666;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .vision-accent {
+      background: linear-gradient(135deg, var(--poster-red) 0%, var(--poster-dark-red) 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-accent::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.15);
+      right: -40px;
+      top: -40px;
+    }
+
+    .vision-accent > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .vision-accent h3,
+    .vision-accent p {
+      color: white;
+    }
+
+    .quote-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--poster-yellow);
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .values-section {
+      padding: 88px 0;
+      background: linear-gradient(180deg, #fafafa 0%, #f3f0ea 100%);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      margin-top: 32px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .value-card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      border-bottom: 5px solid var(--poster-red);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .value-card.alt {
+      border-bottom-color: var(--poster-yellow);
+    }
+
+    .value-icon {
+      font-size: 2.3rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card h3 {
+      color: var(--poster-red);
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .motto-commitment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 30px;
+      margin: 56px 0;
+    }
+
+    .motto-line {
+      color: var(--poster-yellow);
+      font-size: 1.9rem;
+      line-height: 1.25;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .motto-translation {
+      color: #333;
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .commitment-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .commitment-list li {
+      position: relative;
+      padding-left: 26px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    .commitment-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--poster-yellow);
+      font-weight: 900;
+    }
+
+    .programs-section {
+      padding: 88px 0;
+      background: white;
+      margin-top: 32px;
+    }
+
+    .program-card {
+      background: linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      border-top: 5px solid var(--poster-red);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .program-icon {
+      width: 62px;
+      height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 2rem;
+      background: linear-gradient(135deg, rgba(254, 206, 8, 0.28), rgba(198, 21, 27, 0.12));
+      margin-bottom: 18px;
+    }
+
+    .program-card h3 {
+      color: var(--poster-red);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .program-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .promise-section {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0;
+      background: linear-gradient(135deg, var(--poster-red) 0%, var(--poster-dark-red) 100%);
+      margin-top: 32px;
+      color: white;
+    }
+
+    .promise-section::before {
+      content: "";
+      position: absolute;
+      inset: auto -120px -140px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.12);
+    }
+
+    .promise-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .promise-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+
+    .promise-heading h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .promise-heading p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.7;
+    }
+
+    .promise-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .promise-icon {
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+    }
+
+    .promise-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .promise-card p {
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.6;
+    }
+
+    footer {
+      background: var(--poster-red);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 1024px) {
+      .page-header-shell,
+      .vision-layout,
+      .motto-commitment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+
+      .page-header-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+@media (max-width: 768px) {
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  header {
+    padding: 12px 0;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 1.1rem;
+  }
+
+  .logo-text {
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 14px;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+
+  /* =========================
+     HERO SECTION
+  ========================= */
+
+  .page-header {
+    padding: 78px 0 70px;
+    margin-bottom: 42px;
+  }
+
+  .page-header-shell,
+  .ideology-overview,
+  .vision-layout,
+  .motto-commitment-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .page-header-shell {
+    padding: 0 1.4rem;
+  }
+
+  .page-header-kicker {
+    font-size: 0.72rem;
+    padding: 9px 15px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .page-header h1 {
+    font-size: 2.8rem;
+    line-height: 0.96;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .page-header-emphasis {
+    font-size: 2.2rem;
+    line-height: 1.14;
+    margin-top: 10px;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.92);
+  }
+
+  /* KEEP MAIN TEXT VISIBLE */
+
+  .page-header-copy > p:not(.page-header-mobile-note) {
+    display: block;
+  }
+
+  /* REMOVE EXTRA MOBILE NOTE */
+
+  .page-header-mobile-note {
+    display: none;
+  }
+
+  .page-header-stats {
+    display: none;
+  }
+
+  .page-header-panel {
+    display: none;
+  }
+
+  /* =========================
+     CARDS
+  ========================= */
+
+  .vision-card,
+  .motto-card,
+  .commitment-card,
+  .value-card,
+  .program-card {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .vision-card h3,
+  .motto-card h3,
+  .commitment-card h3 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+
+  .vision-card p,
+  .motto-card p,
+  .commitment-card p,
+  .value-card p,
+  .program-card p {
+    font-size: 0.97rem;
+    line-height: 1.82;
+  }
+
+  /* =========================
+     VALUES GRID
+  ========================= */
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .value-card {
+    min-width: 0;
+  }
+
+  .value-card h3,
+  .promise-card h3 {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .value-card p,
+  .promise-card p {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+}
+ @media (max-width: 480px) {
+
+  .container,
+  .content-wrapper,
+  .page-header-shell {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+  }
+
+  .page-header {
+    padding: 68px 0 60px;
+  }
+
+  .page-header h1 {
+    font-size: 2.3rem;
+    line-height: 1;
+  }
+
+  .page-header-emphasis {
+    font-size: 1.95rem;
+    line-height: 1.18;
+  }
+
+  .page-header p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+  }
+
+  .section-heading h2,
+  .section-header h2,
+  .page-header-panel h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .vision-card,
+  .motto-card,
+  .commitment-card,
+  .value-card {
+    padding: 20px;
+  }
+
+  .motto-line {
+    font-size: 1.4rem;
+    line-height: 1.35;
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-text">TVK DIGITAL</div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/developments.html">Developments</a>
+        <a href="/services.html">Services</a>
+        <a href="/ideology.html" class="active">Ideology</a>
+        <a href="/admin.html">Admin Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="page-header-shell">
+        <div class="page-header-copy">
+          <span class="page-header-kicker">கொள்கை மையம் | Ideology Hub</span>
+          <h1>
+            Ideology
+            <span class="page-header-emphasis tamil-text">மக்கள் மையமான கொள்கை பாதை</span>
+          </h1>
+          <p>
+            TVK-யின் core values, democratic principles, Tamil identity, technology-driven governance, மற்றும்
+            மக்கள் பங்கேற்பை அடிப்படையாகக் கொண்ட அரசியல் பார்வை அனைத்தும் இங்கே தெளிவாக தொகுக்கப்பட்டுள்ளன.
+          </p>
+          <p class="page-header-mobile-note tamil-text">TVK எதை நம்புகிறது, எதை முன்னிறுத்துகிறது, எதை அடைய விரும்புகிறது என்பதற்கான தெளிவான வரைபடம்.</p>
+          <div class="page-header-stats">
+            <div class="page-stat">
+              <strong>Vision</strong>
+              <span>People-centered political direction</span>
+            </div>
+            <div class="page-stat">
+              <strong>Values</strong>
+              <span>Equality, transparency, and participation</span>
+            </div>
+            <div class="page-stat">
+              <strong>Promise</strong>
+              <span>Trust, clarity, and accountable action</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="page-header-panel">
+          <span class="page-header-panel-label">இந்தப் பக்கம் | This Page Covers</span>
+          <h2 class="tamil-text">TVK எதை நம்புகிறது, எதை முன்னிறுத்துகிறது, எதை அடைய விரும்புகிறது என்பதற்கான தெளிவான வரைபடம்.</h2>
+          <p>
+            From vision and motto to public commitments and digital-first programs, this page presents the ideological
+            foundation behind the movement.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="content-wrapper">
+      <section class="vision-layout">
+        <article class="vision-card">
+          <div class="section-header">
+            <h2 class="tamil-text">நம்முடைய பார்வை | Our Vision</h2>
+          </div>
+          <p class="tamil-text">
+            தமிழக வெற்றி கழகம் மக்களுடன் இணைந்து, நவீன தொழில்நுட்பத்தின் வழியிலாக சமவெளி அடிப்படையிலான,
+            தமிழ் மொழியை மதிக்கும் ஆட்சியை நிலைநாட்டுவதை நோக்கமாகக் கொண்டுள்ளது.
+          </p>
+          <p>
+            TVK envisions a governance system that respects Tamil language, maintains democratic equality, and leverages
+            technology for people's welfare. We are committed to building a better Tamil Nadu for all citizens.
+          </p>
+        </article>
+
+        <article class="vision-card vision-accent">
+          <div class="quote-mark">"</div>
+          <h3>Vision must translate into public confidence.</h3>
+          <p>
+            A people-centered political movement should not only speak of progress. It should make dignity, access,
+            fairness, and accountability visible in the way it governs.
+          </p>
+        </article>
+      </section>
+    </div>
+
+    <section class="values-section">
+      <div class="content-wrapper">
+        <div class="section-heading">
+          <h2>Our Core Values | அடிப்படை மதிப்புகள்</h2>
+          <p>
+            These values define how TVK approaches governance, public communication, development, and citizen
+            participation.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🏛️</div>
+            <h3>Democracy</h3>
+            <p>Commitment to democratic principles and citizen participation in governance.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">🌐</div>
+            <h3>Technology</h3>
+            <p>Leveraging innovation for transparent and efficient public services.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">தமிழ்</div>
+            <h3>Tamil Pride</h3>
+            <p>Respecting and promoting Tamil language, culture, and heritage.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">👥</div>
+            <h3>People First</h3>
+            <p>Prioritizing citizen welfare and community development in all decisions.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⚖️</div>
+            <h3>Equality</h3>
+            <p>Ensuring equal opportunities and justice for all communities.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">🌱</div>
+            <h3>Sustainability</h3>
+            <p>Environmental conservation and sustainable development practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-wrapper">
+      <section class="motto-commitment-grid">
+        <article class="motto-card">
+          <div class="section-header">
+            <h2 class="tamil-text">நம்முடைய சொற்றொடர் | Our Motto</h2>
+          </div>
+          <div class="motto-line tamil-text">"நிமிர்ந்து நில்... துணிந்து செல்..."</div>
+          <p class="motto-translation tamil-text">
+            "நிமிர்ந்து நில்" - Stand Up Tall, "துணிந்து செல்" - March Forward Boldly
+          </p>
+          <p>
+            This motto represents our commitment to empowering citizens to stand with dignity and advance confidently
+            towards progress. We believe in the strength and potential of every individual in Tamil Nadu.
+          </p>
+        </article>
+
+        <article class="commitment-card">
+          <div class="section-header">
+            <h2>Our Commitment | உறுதி</h2>
+          </div>
+          <p class="tamil-text">
+            "மக்களுடன் இணைந்து முன்னேற்றம்" - Development Through People's Participation
+          </p>
+          <p>
+            TVK is committed to inclusive governance where citizens have a voice in decision-making. We believe that
+            development should be driven by the people, for the people, ensuring that no one is left behind.
+          </p>
+          <ul class="commitment-list">
+            <li>Transparent and accountable governance</li>
+            <li>Direct citizen engagement and feedback</li>
+            <li>Technology-enabled public services</li>
+            <li>Rapid resolution of citizen grievances</li>
+            <li>Inclusive development for all sections of society</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
+  </footer>
+</body>
+</html>

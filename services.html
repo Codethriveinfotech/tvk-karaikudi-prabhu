@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | TVK Digital</title>
+  <meta name="description" content="Services and benefits offered by Tamilaga Vettri Kazhagam" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Hind+Madurai:wght@400;700&display=swap');
+
+    :root {
+      --poster-red: #c6151b;
+      --poster-yellow: #fece08;
+      --poster-dark-red: #8b0000;
+      --white: #ffffff;
+      --black: #000000;
+      --grey: #f2f2f2;
+      --text-soft: #5f5f5f;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', 'Hind Madurai', sans-serif;
+      background: var(--grey);
+      color: #1a1a1a;
+    }
+
+    .tamil-text {
+      font-family: 'Hind Madurai', sans-serif;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      padding: 15px 0;
+      background: rgba(198, 21, 27, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .logo-text {
+      color: white;
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--poster-yellow);
+    }
+
+    .nav-links a.active {
+      color: var(--poster-yellow);
+      border: 1px solid var(--poster-yellow);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 0;
+    }
+
+    .page-header {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(254, 206, 8, 0.3), transparent 30%),
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 16%),
+        linear-gradient(135deg, #6f0000 0%, var(--poster-red) 40%, #140404 100%);
+      color: white;
+      padding: 56px 0 48px;
+      margin-bottom: 56px;
+    }
+
+    .page-header::before,
+    .page-header::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .page-header::before {
+      width: 320px;
+      height: 320px;
+      top: -120px;
+      right: -70px;
+      background: rgba(254, 206, 8, 0.12);
+      filter: blur(8px);
+    }
+
+    .page-header::after {
+      width: 220px;
+      height: 220px;
+      left: -40px;
+      bottom: -90px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .page-header-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.85fr);
+      gap: 32px;
+      align-items: end;
+    }
+
+    .page-header-copy {
+      max-width: 760px;
+    }
+
+    .page-header-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--poster-yellow);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .page-header-emphasis {
+      display: block;
+      color: var(--poster-yellow);
+    }
+
+    .page-header p {
+      font-size: 1.08rem;
+      line-height: 1.78;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 700px;
+    }
+
+    .page-header-mobile-note {
+      display: none;
+      margin-top: 18px;
+      font-size: 1.02rem;
+      line-height: 1.72;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .page-header-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .page-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+    }
+
+    .page-stat strong {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .page-stat span {
+      display: block;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .page-header-panel {
+      justify-self: end;
+      width: min(100%, 330px);
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .page-header-panel-label {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .page-header-panel h2 {
+      font-size: 1.55rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .page-header-panel p {
+      max-width: none;
+      margin: 0;
+      font-size: 0.96rem;
+      line-height: 1.72;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .services-overview {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .overview-card,
+    .overview-highlight {
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    .overview-card {
+      background: linear-gradient(180deg, #fff9ec 0%, #ffffff 100%);
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      padding: 30px;
+    }
+
+    .overview-card h2,
+    .section-heading h2 {
+      color: var(--poster-red);
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .overview-card p,
+    .section-heading p {
+      color: var(--text-soft);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .overview-list {
+      list-style: none;
+      margin-top: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .overview-list li {
+      position: relative;
+      padding-left: 26px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .overview-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--poster-yellow), var(--poster-red));
+      box-shadow: 0 0 0 4px rgba(254, 206, 8, 0.18);
+    }
+
+    .overview-highlight {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #161616 0%, #390506 54%, var(--poster-red) 100%);
+      color: white;
+      padding: 30px;
+    }
+
+    .overview-highlight::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: -40px;
+      top: -60px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.16);
+      filter: blur(10px);
+    }
+
+    .overview-highlight > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-highlight span {
+      display: inline-block;
+      color: var(--poster-yellow);
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .overview-highlight h3 {
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .overview-highlight p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .overview-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .overview-metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .overview-metric strong {
+      display: block;
+      color: var(--poster-yellow);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .overview-metric span {
+      display: block;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, #fffdf8 0%, #ffffff 100%);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      border: 1px solid rgba(198, 21, 27, 0.1);
+      border-top: 5px solid var(--poster-red);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(254, 206, 8, 0.28), rgba(198, 21, 27, 0.12));
+      margin-bottom: 18px;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(198, 21, 27, 0.08);
+      color: var(--poster-red);
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--poster-red);
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .service-features {
+      list-style: none;
+      margin: 15px 0;
+    }
+
+    .service-features li {
+      position: relative;
+      color: #555;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      padding: 6px 0 6px 25px;
+    }
+
+    .service-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--poster-yellow);
+      font-weight: 900;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--poster-red);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .thematic-section {
+      padding: 88px 0;
+    }
+
+    .values-section {
+      background: linear-gradient(180deg, #fafafa 0%, #f3f0ea 100%);
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      margin-top: 32px;
+    }
+
+  
+
+    .value-card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      border-bottom: 5px solid var(--poster-red);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .value-card.alt {
+      border-bottom-color: var(--poster-yellow);
+    }
+
+    .value-icon {
+      font-size: 2.3rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card h3 {
+      color: var(--poster-red);
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+    }
+
+    .value-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .promise-section {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0;
+      background: linear-gradient(135deg, var(--poster-red) 0%, var(--poster-dark-red) 100%);
+      margin-top: 32px;
+      color: white;
+    }
+
+    .promise-section::before {
+      content: "";
+      position: absolute;
+      inset: auto -120px -140px auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(254, 206, 8, 0.12);
+    }
+
+    .promise-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .promise-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+
+    .promise-heading h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .promise-heading p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.7;
+    }
+
+    .promise-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .promise-icon {
+      font-size: 2.6rem;
+      margin-bottom: 14px;
+    }
+
+    .promise-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .promise-card p {
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.6;
+    }
+
+    footer {
+      background: var(--poster-red);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 1024px) {
+      .page-header-shell,
+      .services-overview {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header-panel {
+        justify-self: stretch;
+        width: 100%;
+      }
+
+      .page-header-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 10px 0;
+      }
+
+      header .container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 1rem;
+      }
+
+      .logo-text {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+     
+
+      .page-header-shell,
+      .services-overview {
+        grid-template-columns: 1fr;
+      }
+
+   
+
+      .page-header-stats {
+        display: none;
+      }
+
+      .page-header-panel {
+        display: none;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+        gap: 14px;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        font-size: 0.72rem;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container,
+      .content-wrapper,
+      .page-header-shell,
+      .promise-shell {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .page-header h1,
+      .page-header-panel h2,
+      .overview-card h2,
+      .section-heading h2,
+      .promise-heading h2 {
+        font-size: 1.9rem;
+      }
+
+      .page-header-kicker,
+      .page-header-panel-label,
+      .service-tag {
+        font-size: 0.7rem;
+      }
+
+      .service-card,
+      .overview-card,
+      .overview-highlight,
+      .value-card,
+      .promise-card {
+        padding: 22px;
+      }
+    }
+    /* ===============================
+   VALUES + PROMISE GRID FIX
+================================= */
+
+.values-grid,
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ===============================
+   CARD FIXES
+================================= */
+
+.value-card,
+.promise-card {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===============================
+   TEXT WRAPPING FIX
+================================= */
+
+.value-card h3,
+.promise-card h3,
+.value-card p,
+.promise-card p {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Better paragraph readability */
+
+.value-card p,
+.promise-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+/* ===============================
+   TABLET FIX
+================================= */
+
+@media (max-width: 1024px) {
+
+  .values-grid,
+  .promise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+}
+
+/* ===============================
+   MOBILE FIX
+================================= */
+
+@media (max-width: 768px) {
+
+  .values-grid,
+  .promise-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .value-card,
+  .promise-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .value-card h3,
+  .promise-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .value-card p,
+  .promise-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+}
+
+/* ===============================
+   SMALL MOBILE FIX
+================================= */
+
+@media (max-width: 480px) {
+
+  .values-grid,
+  .promise-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .value-card,
+  .promise-card {
+    padding: 18px;
+  }
+
+  .value-card h3,
+  .promise-card h3 {
+    font-size: 1rem;
+  }
+
+  .value-card p,
+  .promise-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-text">TVK DIGITAL</div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/developments.html">Developments</a>
+        <a href="/services.html" class="active">Services</a>
+        <a href="/ideology.html">Ideology</a>
+        <a href="/admin.html">Admin Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="page-header-shell">
+        <div class="page-header-copy">
+          <span class="page-header-kicker">மக்கள் சேவை | Citizen Service Hub</span>
+          <h1>
+            Services
+            <span class="page-header-emphasis tamil-text">மக்களை சென்றடையும் Support</span>
+          </h1>
+          <p>
+            குறைதீர் மனுக்கள் முதல் education support, healthcare access, livelihood assistance, மற்றும் community
+            welfare வரை, மக்கள் நேரடியாக புரிந்து கொள்ளக்கூடிய service areas அனைத்தும் இங்கே ஒரே இடத்தில்
+            ஒழுங்காக தொகுக்கப்பட்டுள்ளன.
+          </p>
+          <p class="page-header-mobile-note tamil-text">வேகமான அணுகல், தெளிவான வழிகாட்டு தகவல், accountable follow-up தேவைப்படும் மக்களுக்காக.</p>
+          <div class="page-header-stats">
+            <div class="page-stat">
+              <strong>6</strong>
+              <span>Core service areas</span>
+            </div>
+            <div class="page-stat">
+              <strong>People</strong>
+              <span>Focused delivery and access</span>
+            </div>
+            <div class="page-stat">
+              <strong>Clear</strong>
+              <span>Support categories and outcomes</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="page-header-panel">
+          <span class="page-header-panel-label">மக்களுக்காக | Designed For</span>
+          <h2 class="tamil-text">வேகமான அணுகல், தெளிவான வழிகாட்டு தகவல், accountable follow-up தேவைப்படும் மக்களுக்காக.</h2>
+          <p>
+            கீழே உள்ள service categories ஒவ்வொன்றும், எந்த வகை ஆதரவு எங்கு கிடைக்கிறது மற்றும் அது public
+            welfare-க்கு எப்படி உதவுகிறது என்பதைக் தெளிவாக புரியவைக்க குழுவாக்கப்பட்டுள்ளன.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services Overview & Grid Section -->
+    <section class="services-section">
+      <div class="content-wrapper">
+        
+        <!-- Services Overview Grid -->
+        <div class="services-overview">
+          <div class="overview-card">
+            <h2 class="tamil-text">மக்களுக்கான சேவைகள் | Outreach System</h2>
+            <p>
+              Under the leadership of MLA Dr. Prabhu. TK, the Karaikudi constituency has established a robust, citizen-first service delivery network. We ensure that welfare assistance, infrastructure requests, and educational aid reach the grassroots level without any administrative delays.
+            </p>
+            <ul class="overview-list tamil-text">
+              <li>நேரடி மனுக்கள் கண்காணிப்பு மற்றும் உடனடி தீர்வு (Grievance Follow-up)</li>
+              <li>பள்ளி மற்றும் கல்லூரி மாணவர்களுக்கான கல்வி உதவி (Student Scholarships)</li>
+              <li>ஏழை எளிய மக்களுக்கு மருத்துவ மற்றும் வாழ்வாதார உதவி (Welfare Outreach)</li>
+            </ul>
+          </div>
+          
+          <div class="overview-highlight">
+            <span>Constituency Impact</span>
+            <h3 class="tamil-text">மக்களுக்கான அர்ப்பணிப்பு</h3>
+            <p>
+              Our centralized service hub monitors and resolves citizen issues across all wards in Karaikudi, promoting transparency, accountability, and direct access to representatives.
+            </p>
+            <div class="overview-metrics">
+              <div class="overview-metric">
+                <strong>12,400+</strong>
+                <span>Beneficiaries</span>
+              </div>
+              <div class="overview-metric">
+                <strong>98%</strong>
+                <span>Resolution Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Grid Header -->
+        <div class="section-heading" style="margin-top: 60px; text-align: center; max-width: 100%;">
+          <span class="service-tag" style="margin-bottom: 10px;">Outreach Categories</span>
+          <h2 class="tamil-text" style="font-size: 2.5rem; color: var(--poster-red); margin-bottom: 12px;">சேவைப்பிரிவுகள் | Core Services</h2>
+          <div style="width: 80px; height: 5px; background: var(--poster-yellow); margin: 0 auto 20px;"></div>
+          <p style="max-width: 700px; margin: 0 auto;">
+            Explore the core citizen service directories managed by the Karaikudi TVK office. Click on any category to learn more or submit a request.
+          </p>
+        </div>
+
+        <!-- Service Cards Grid -->
+        <div class="service-grid">
+          
+          <!-- Card 1: Grievance Redressal -->
+          <div class="service-card">
+            <div class="service-icon">📋</div>
+            <span class="service-tag">Core Support</span>
+            <h3 class="service-title tamil-text">குறைதீர்க்கும் பிரிவு | Grievance Redressal</h3>
+            <p class="service-desc">
+              Submit and track civic complaints, ward issues, and administrative requests directly online or through our constituency office.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>உடனடி மனு பதிவு & SMS கண்காணிப்பு (Track via SMS)</li>
+              <li>வார்டு வாரியான கள ஆய்வுகள் (Ward-level field visits)</li>
+              <li>நேரடித் தீர்வு முகாம்கள் (Resolution camps)</li>
+            </ul>
+            <a href="/developments.html#news" class="service-cta">Learn More &rarr;</a>
+          </div>
+
+          <!-- Card 2: Education Support -->
+          <div class="service-card">
+            <div class="service-icon">🎓</div>
+            <span class="service-tag">Education</span>
+            <h3 class="service-title tamil-text">கல்வி உதவி | Student Support</h3>
+            <p class="service-desc">
+              Scholarships, learning material distribution, and career guidance seminars for school and college students in Karaikudi.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>உயர்கல்வி நிதியுதவி திட்டங்கள் (College Scholarships)</li>
+              <li>இலவச புத்தக வங்கி & பயிலகங்கள் (Free Book Bank)</li>
+              <li>தொழில்முறை வழிகாட்டுதல் வகுப்புகள் (Career Guidance)</li>
+            </ul>
+            <a href="/developments.html#news" class="service-cta">Learn More &rarr;</a>
+          </div>
+
+          <!-- Card 3: Healthcare Access -->
+          <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <span class="service-tag">Welfare</span>
+            <h3 class="service-title tamil-text">மருத்துவ உதவி | Healthcare Access</h3>
+            <p class="service-desc">
+              Free general medical camps, diagnostic drives, and emergency medical assistance for families in rural wards.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>இலவச மருத்துவ & பல் முகாம்கள் (Health & Dental Camps)</li>
+              <li>அரசு மருத்துவ காப்பீடு வழிகாட்டி (Insurance Guidance)</li>
+              <li>மருந்துகள் மற்றும் அவசர உதவி (Emergency medical aid)</li>
+            </ul>
+            <a href="/developments.html#news" class="service-cta">Learn More &rarr;</a>
+          </div>
+
+          <!-- Card 4: Infrastructure & Basic Needs -->
+          <div class="service-card">
+            <div class="service-icon">🚧</div>
+            <span class="service-tag">Development</span>
+            <h3 class="service-title tamil-text">அடிப்படை வசதிகள் | Infrastructure</h3>
+            <p class="service-desc">
+              Raising and tracking basic community concerns such as drinking water supply, road repairs, streetlights, and sanitation.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>குடிநீர் பற்றாக்குறை நிவர்த்தி (Drinking Water supply)</li>
+              <li>சாலை மற்றும் தெருவிளக்கு பழுது (Streetlight reporting)</li>
+              <li>முறையான வடிகால் பராமரிப்பு (Drainage maintenance)</li>
+            </ul>
+            <a href="/developments.html#news" class="service-cta">Learn More &rarr;</a>
+          </div>
+
+          <!-- Card 5: Livelihood & Skill Training -->
+          <div class="service-card">
+            <div class="service-icon">💼</div>
+            <span class="service-tag">Empowerment</span>
+            <h3 class="service-title tamil-text">வாழ்வாதாரம் & திறன் | Skill Development</h3>
+            <p class="service-desc">
+              Vocational training, coding workshops, and employment drives designed to empower local youth and women.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>இலவச கணினி மற்றும் திறன் பயிற்சி (Free IT Training)</li>
+              <li>வேலைவாய்ப்பு முகாம்கள் (Constituency Job Fairs)</li>
+              <li>சுயதொழில் ஆலோசனைகள் (Self-employment guidance)</li>
+            </ul>
+            <a href="/developments.html#news" class="service-cta">Learn More &rarr;</a>
+          </div>
+
+          <!-- Card 6: Women & Social Welfare -->
+          <div class="service-card">
+            <div class="service-icon">👩</div>
+            <span class="service-tag">Welfare</span>
+            <h3 class="service-title tamil-text">மகளிர் & சமூக நலம் | Social Welfare</h3>
+            <p class="service-desc">
+              Assisting single mothers, senior citizens, and women's self-help groups with direct welfare and pension coordination.
+            </p>
+            <ul class="service-features tamil-text">
+              <li>மகளிர் சுய உதவிக்குழு ஆதரவு (Self-Help Group support)</li>
+              <li>முதியோர் ஓய்வூதிய விண்ணப்பங்கள் (Old age pension help)</li>
+              <li>நலத்திட்ட பொருட்கள் விநியோகம் (Welfare distribution)</li>
+            </ul>
+            <a href="/developments.html#news" class="service-cta">Learn More &rarr;</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="values" class="thematic-section values-section">
+      <div class="content-wrapper">
+        <div class="section-heading">
+          <h2 class="tamil-text">நமது நான்கு தூண்கள் | Our Four Pillars</h2>
+          <p>
+            These pillars shape how citizen services should be designed: equal access, practical innovation,
+            transparent follow-up, and strong public protection.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">⚖️</div>
+            <h3 class="tamil-text">சமத்துவம் (Equality)</h3>
+            <p>Ensuring equal opportunities and progress for all citizens regardless of their backgrounds. A society where justice is universal.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">🧠</div>
+            <h3 class="tamil-text">அறிவியல் பார்வை (Innovation)</h3>
+            <p>Leveraging scientific temper and technological advancements to solve age-old administrative challenges effectively.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">👁️</div>
+            <h3 class="tamil-text">வெளிப்படைத் தன்மை (Transparency)</h3>
+            <p>A corruption-free digital governance where every decision is open to public scrutiny and tracked in real-time.</p>
+          </div>
+          <div class="value-card alt">
+            <div class="value-icon">🛡️</div>
+            <h3 class="tamil-text">பாதுகாப்பு (Security)</h3>
+            <p>Protecting the rights, data, and future of our people through robust security frameworks and social safety nets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="promise" class="promise-section">
+      <div class="promise-shell">
+        <div class="promise-heading">
+          <h2 class="tamil-text">எங்களின் வாக்குறுதி | Our Promise</h2>
+          <p>
+            Good service is not only about availability. It is about timeliness, reliability, transparency, and public
+            trust built through consistent follow-through.
+          </p>
+        </div>
+
+        <div class="promise-grid">
+          <div class="promise-card">
+            <div class="promise-icon">⏰</div>
+            <h3 class="tamil-text">சரியான நேரப் புதுப்பிப்புகள்</h3>
+            <p>Timely updates that reduce uncertainty and keep people informed.</p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">🎯</div>
+            <h3 class="tamil-text">துல்லியமான தகவல்</h3>
+            <p>Accurate information presented clearly and responsibly.</p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">👁️</div>
+            <h3 class="tamil-text">முழு வெளிப்படைத் தன்மை</h3>
+            <p>Full transparency in service intent, communication, and progress.</p>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">👥</div>
+            <h3 class="tamil-text">மக்கள் நம்பிக்கை</h3>
+            <p>People's trust as the standard every public-facing service must earn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
+  </footer>
+</body>
+</html>
