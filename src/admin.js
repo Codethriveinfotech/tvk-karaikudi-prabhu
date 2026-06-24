@@ -68,6 +68,26 @@ const deleteGrievanceBtn = document.getElementById('delete-grievance-btn');
 document.addEventListener('DOMContentLoaded', () => {
   initIcons();
   checkAuthStatus();
+  
+  // Mobile menu toggle functionality
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.admin-topbar-nav');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // Logo click to go home (dashboard)
+  const logoHome = document.getElementById('logo-home');
+  if (logoHome) {
+    logoHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Show dashboard view
+      showDashboard();
+    });
+  }
+  
   setupEventListeners();
 });
 

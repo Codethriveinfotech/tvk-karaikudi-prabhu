@@ -36,58 +36,7 @@
       font-family: 'Hind Madurai', sans-serif;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      padding: 15px 0;
-      background: rgba(198, 21, 27, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .logo-text {
-      color: white;
-      font-weight: 900;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--poster-yellow);
-    }
-
-    .nav-links a.active {
-      color: var(--poster-yellow);
-      border: 1px solid var(--poster-yellow);
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
+    /* Header styles deleted to use global style.css */
 
     main {
       padding: 0;
@@ -101,7 +50,7 @@
         radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 16%),
         linear-gradient(135deg, #6f0000 0%, var(--poster-red) 40%, #140404 100%);
       color: white;
-      padding: 56px 0 48px;
+      padding: 130px 0 48px;
       margin-bottom: 56px;
     }
 
@@ -527,8 +476,15 @@
     }
 
     .value-icon {
-      font-size: 2.3rem;
       margin-bottom: 14px;
+    }
+    .value-icon > img {
+      width: 76px;
+      height: 76px;
+      object-fit: cover;
+      border-radius: 50% !important;
+      border: 3px solid var(--poster-yellow);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
 
     .value-card h3 {
@@ -596,8 +552,16 @@
     }
 
     .promise-icon {
-      font-size: 2.6rem;
       margin-bottom: 14px;
+    }
+    .promise-icon > img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      margin: 0 auto;
+      border-radius: 50% !important;
+      border: 3px solid var(--poster-yellow);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
 
     .promise-card h3 {
@@ -657,7 +621,9 @@
         grid-template-columns: 1fr;
       }
 
-   
+      .page-header {
+        padding: 120px 0 70px;
+      }
 
       .page-header-stats {
         display: none;
@@ -697,6 +663,10 @@
       .promise-shell {
         padding-left: 1rem;
         padding-right: 1rem;
+      }
+
+      .page-header {
+        padding: 110px 0 58px;
       }
 
       .page-header h1,
@@ -843,16 +813,51 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo-text">TVK DIGITAL</div>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/developments.html">Developments</a>
-        <a href="/services.html" class="active">Services</a>
-        <a href="/ideology.html">Ideology</a>
-        <a href="/admin.html">Admin Login</a>
+  <!-- ======== HEADER ======== -->
+  <header id="main-header">
+    <div class="header-inner">
+      <a href="/" class="logo-link">
+        <div class="logo-group">
+          <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img">
+          <div class="logo-text-group">
+            <span class="logo-title">TVK KARAIKUDI</span>
+            <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+          </div>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/developments.html" class="nav-link">Developments</a>
+        <a href="/services.html" class="nav-link active">Services</a>
+        <a href="/ideology.html" class="nav-link">Ideology</a>
+        <a href="/admin.html" class="nav-link nav-admin">Admin</a>
       </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="/developments.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        Developments
+      </a>
+      <a href="/services.html" class="mob-link active">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Services
+      </a>
+      <a href="/ideology.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+        Ideology
+      </a>
+      <a href="/admin.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Admin
+      </a>
     </div>
   </header>
 
@@ -907,7 +912,7 @@
           <div class="overview-card">
             <h2 class="tamil-text">மக்களுக்கான சேவைகள் | Outreach System</h2>
             <p>
-              Under the leadership of MLA Dr. Prabhu. TK, the Karaikudi constituency has established a robust, citizen-first service delivery network. We ensure that welfare assistance, infrastructure requests, and educational aid reach the grassroots level without any administrative delays.
+              Under the leadership of MLA Dr.T.K. Prabhu, the Karaikudi constituency has established a robust, citizen-first service delivery network. We ensure that welfare assistance, infrastructure requests, and educational aid reach the grassroots level without any administrative delays.
             </p>
             <ul class="overview-list tamil-text">
               <li>நேரடி மனுக்கள் கண்காணிப்பு மற்றும் உடனடி தீர்வு (Grievance Follow-up)</li>
@@ -950,7 +955,32 @@
           
           <!-- Card 1: Grievance Redressal -->
           <div class="service-card">
-            <div class="service-icon">📋</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#c6151b"/>
+                    <stop offset="100%" stop-color="#8b0000"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr1)"/>
+                <!-- clipboard body -->
+                <rect x="14" y="16" width="28" height="32" rx="3" fill="rgba(255,255,255,0.18)"/>
+                <rect x="14" y="16" width="28" height="32" rx="3" fill="none" stroke="#fff" stroke-width="1.5"/>
+                <!-- clip at top -->
+                <rect x="21" y="13" width="14" height="7" rx="2" fill="#fece08"/>
+                <!-- lines -->
+                <rect x="19" y="26" width="7" height="2" rx="1" fill="white"/>
+                <rect x="28" y="26" width="9" height="2" rx="1" fill="rgba(255,255,255,0.6)"/>
+                <rect x="19" y="31" width="7" height="2" rx="1" fill="white"/>
+                <rect x="28" y="31" width="9" height="2" rx="1" fill="rgba(255,255,255,0.6)"/>
+                <rect x="19" y="36" width="7" height="2" rx="1" fill="white"/>
+                <rect x="28" y="36" width="5" height="2" rx="1" fill="rgba(255,255,255,0.6)"/>
+                <!-- checkmark -->
+                <circle cx="40" cy="40" r="7" fill="#fece08"/>
+                <polyline points="36.5,40 39,42.5 43.5,37.5" fill="none" stroke="#8b0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <span class="service-tag">Core Support</span>
             <h3 class="service-title tamil-text">குறைதீர்க்கும் பிரிவு | Grievance Redressal</h3>
             <p class="service-desc">
@@ -966,7 +996,29 @@
 
           <!-- Card 2: Education Support -->
           <div class="service-card">
-            <div class="service-icon">🎓</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1565C0"/>
+                    <stop offset="100%" stop-color="#0D47A1"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr2)"/>
+                <!-- book body -->
+                <rect x="13" y="15" width="18" height="24" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <rect x="13" y="15" width="18" height="24" rx="2" fill="none" stroke="white" stroke-width="1.5"/>
+                <line x1="22" y1="15" x2="22" y2="39" stroke="#fece08" stroke-width="2"/>
+                <rect x="15" y="19" width="5" height="1.5" rx="1" fill="rgba(255,255,255,0.7)"/>
+                <rect x="15" y="23" width="5" height="1.5" rx="1" fill="rgba(255,255,255,0.7)"/>
+                <rect x="15" y="27" width="5" height="1.5" rx="1" fill="rgba(255,255,255,0.7)"/>
+                <!-- graduation cap -->
+                <polygon points="36,22 44,26 36,30 28,26" fill="#fece08"/>
+                <rect x="42" y="26" width="2" height="7" rx="1" fill="white"/>
+                <ellipse cx="43" cy="33" rx="2.5" ry="1.5" fill="#fece08"/>
+                <path d="M31 27.5 L31 33 Q36 36 41 33 L41 27.5" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1"/>
+              </svg>
+            </div>
             <span class="service-tag">Education</span>
             <h3 class="service-title tamil-text">கல்வி உதவி | Student Support</h3>
             <p class="service-desc">
@@ -982,7 +1034,22 @@
 
           <!-- Card 3: Healthcare Access -->
           <div class="service-card">
-            <div class="service-icon">🏥</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#d32f2f"/>
+                    <stop offset="100%" stop-color="#b71c1c"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr3)"/>
+                <!-- medical cross -->
+                <rect x="23" y="14" width="10" height="28" rx="3" fill="white"/>
+                <rect x="14" y="23" width="28" height="10" rx="3" fill="white"/>
+                <!-- heart accent -->
+                <path d="M28,44 C28,44 18,36 18,30 a5 5 0 0 1 10,0 a5 5 0 0 1 10,0 C38,36 28,44 28,44z" fill="#fece08" opacity="0.9"/>
+              </svg>
+            </div>
             <span class="service-tag">Welfare</span>
             <h3 class="service-title tamil-text">மருத்துவ உதவி | Healthcare Access</h3>
             <p class="service-desc">
@@ -998,7 +1065,36 @@
 
           <!-- Card 4: Infrastructure & Basic Needs -->
           <div class="service-card">
-            <div class="service-icon">🚧</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#e65100"/>
+                    <stop offset="100%" stop-color="#bf360c"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr4)"/>
+                <!-- road -->
+                <rect x="10" y="38" width="36" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+                <rect x="25" y="40" width="6" height="2" rx="1" fill="white" opacity="0.7"/>
+                <!-- building 1 -->
+                <rect x="12" y="20" width="14" height="20" rx="2" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
+                <rect x="15" y="23" width="3" height="4" rx="1" fill="white"/>
+                <rect x="20" y="23" width="3" height="4" rx="1" fill="white"/>
+                <rect x="15" y="30" width="3" height="4" rx="1" fill="white"/>
+                <rect x="20" y="30" width="3" height="4" rx="1" fill="white"/>
+                <!-- building 2 -->
+                <rect x="30" y="14" width="14" height="26" rx="2" fill="rgba(255,255,255,0.15)" stroke="#fece08" stroke-width="1.5"/>
+                <rect x="33" y="18" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <rect x="38" y="18" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <rect x="33" y="25" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <rect x="38" y="25" width="3" height="4" rx="1" fill="#fece08" opacity="0.8"/>
+                <!-- crane arm -->
+                <line x1="37" y1="14" x2="37" y2="8" stroke="white" stroke-width="2"/>
+                <line x1="32" y1="8" x2="44" y2="8" stroke="white" stroke-width="2"/>
+                <line x1="44" y1="8" x2="44" y2="13" stroke="white" stroke-width="1.5" stroke-dasharray="2,1"/>
+              </svg>
+            </div>
             <span class="service-tag">Development</span>
             <h3 class="service-title tamil-text">அடிப்படை வசதிகள் | Infrastructure</h3>
             <p class="service-desc">
@@ -1014,7 +1110,29 @@
 
           <!-- Card 5: Livelihood & Skill Training -->
           <div class="service-card">
-            <div class="service-icon">💼</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr5" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6a1b9a"/>
+                    <stop offset="100%" stop-color="#4527a0"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr5)"/>
+                <!-- briefcase -->
+                <rect x="11" y="22" width="34" height="22" rx="3" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5"/>
+                <path d="M21 22 V18 a4 4 0 0 1 4-4 h6 a4 4 0 0 1 4 4 V22" fill="none" stroke="white" stroke-width="1.5"/>
+                <line x1="11" y1="31" x2="45" y2="31" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                <rect x="25" y="29" width="6" height="4" rx="1" fill="#fece08"/>
+                <!-- gear accent -->
+                <circle cx="40" cy="15" r="6" fill="#fece08"/>
+                <circle cx="40" cy="15" r="2.5" fill="#4527a0"/>
+                <rect x="39" y="8" width="2" height="3" rx="1" fill="#fece08"/>
+                <rect x="39" y="19" width="2" height="3" rx="1" fill="#fece08"/>
+                <rect x="33" y="14" width="3" height="2" rx="1" fill="#fece08"/>
+                <rect x="44" y="14" width="3" height="2" rx="1" fill="#fece08"/>
+              </svg>
+            </div>
             <span class="service-tag">Empowerment</span>
             <h3 class="service-title tamil-text">வாழ்வாதாரம் & திறன் | Skill Development</h3>
             <p class="service-desc">
@@ -1030,7 +1148,28 @@
 
           <!-- Card 6: Women & Social Welfare -->
           <div class="service-card">
-            <div class="service-icon">👩</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gr6" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00695c"/>
+                    <stop offset="100%" stop-color="#004d40"/>
+                  </linearGradient>
+                </defs>
+                <rect width="56" height="56" rx="14" fill="url(#gr6)"/>
+                <!-- person 1 (center) -->
+                <circle cx="28" cy="17" r="5.5" fill="white"/>
+                <path d="M18 38 Q18 28 28 28 Q38 28 38 38" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
+                <!-- person 2 (left) -->
+                <circle cx="14" cy="20" r="4" fill="rgba(255,255,255,0.7)"/>
+                <path d="M6 38 Q6 30 14 30 Q22 30 22 38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+                <!-- person 3 (right) -->
+                <circle cx="42" cy="20" r="4" fill="rgba(255,255,255,0.7)"/>
+                <path d="M34 38 Q34 30 42 30 Q50 30 50 38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+                <!-- heart -->
+                <path d="M28,46 C28,46 22,41 22,37 a3 3 0 0 1 6,0 a3 3 0 0 1 6,0 C34,41 28,46 28,46z" fill="#fece08"/>
+              </svg>
+            </div>
             <span class="service-tag">Welfare</span>
             <h3 class="service-title tamil-text">மகளிர் & சமூக நலம் | Social Welfare</h3>
             <p class="service-desc">
@@ -1061,22 +1200,30 @@
 
         <div class="values-grid">
           <div class="value-card">
-            <div class="value-icon">⚖️</div>
+            <div class="value-icon">
+              <img src="/pillar_equality.png" alt="Equality / சமத்துவம்" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">சமத்துவம் (Equality)</h3>
             <p>Ensuring equal opportunities and progress for all citizens regardless of their backgrounds. A society where justice is universal.</p>
           </div>
           <div class="value-card alt">
-            <div class="value-icon">🧠</div>
+            <div class="value-icon">
+              <img src="/pillar_innovation.png" alt="Innovation / அறிவியல் பார்வை" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">அறிவியல் பார்வை (Innovation)</h3>
             <p>Leveraging scientific temper and technological advancements to solve age-old administrative challenges effectively.</p>
           </div>
           <div class="value-card">
-            <div class="value-icon">👁️</div>
+            <div class="value-icon">
+              <img src="/pillar_transparency.png" alt="Transparency / வெளிப்படைத் தன்மை" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">வெளிப்படைத் தன்மை (Transparency)</h3>
             <p>A corruption-free digital governance where every decision is open to public scrutiny and tracked in real-time.</p>
           </div>
           <div class="value-card alt">
-            <div class="value-icon">🛡️</div>
+            <div class="value-icon">
+              <img src="/pillar_security.png" alt="Security / பாதுகாப்பு" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">பாதுகாப்பு (Security)</h3>
             <p>Protecting the rights, data, and future of our people through robust security frameworks and social safety nets.</p>
           </div>
@@ -1096,22 +1243,30 @@
 
         <div class="promise-grid">
           <div class="promise-card">
-            <div class="promise-icon">⏰</div>
+            <div class="promise-icon">
+              <img src="/promise_timely.png" alt="Timely Updates / சரியான நேரப் புதுப்பிப்புகள்" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">சரியான நேரப் புதுப்பிப்புகள்</h3>
             <p>Timely updates that reduce uncertainty and keep people informed.</p>
           </div>
           <div class="promise-card">
-            <div class="promise-icon">🎯</div>
+            <div class="promise-icon">
+              <img src="/promise_accurate.png" alt="Accurate Information / துல்லியமான தகவல்" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">துல்லியமான தகவல்</h3>
             <p>Accurate information presented clearly and responsibly.</p>
           </div>
           <div class="promise-card">
-            <div class="promise-icon">👁️</div>
+            <div class="promise-icon">
+              <img src="/promise_transparency.png" alt="Full Transparency / முழு வெளிப்படைத் தன்மை" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">முழு வெளிப்படைத் தன்மை</h3>
             <p>Full transparency in service intent, communication, and progress.</p>
           </div>
           <div class="promise-card">
-            <div class="promise-icon">👥</div>
+            <div class="promise-icon">
+              <img src="/promise_trust.png" alt="People's Trust / மக்கள் நம்பிக்கை" class="real-icon-img">
+            </div>
             <h3 class="tamil-text">மக்கள் நம்பிக்கை</h3>
             <p>People's trust as the standard every public-facing service must earn.</p>
           </div>
@@ -1123,5 +1278,6 @@
   <footer>
     <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
   </footer>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

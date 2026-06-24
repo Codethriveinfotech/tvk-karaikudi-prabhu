@@ -36,58 +36,7 @@
       font-family: 'Hind Madurai', sans-serif;
     }
 
-    header {
-      position: sticky;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      padding: 15px 0;
-      background: rgba(198, 21, 27, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .logo-text {
-      color: white;
-      font-weight: 900;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--poster-yellow);
-    }
-
-    .nav-links a.active {
-      color: var(--poster-yellow);
-      border: 1px solid var(--poster-yellow);
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
+    /* Header styles deleted to use global style.css */
 
     main {
       padding: 0;
@@ -101,7 +50,7 @@
         radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.14), transparent 18%),
         linear-gradient(135deg, #6f0000 0%, var(--poster-red) 42%, #140404 100%);
       color: white;
-      padding: 56px 0 48px;
+      padding: 130px 0 48px;
       margin-bottom: 60px;
     }
 
@@ -897,7 +846,7 @@
   ========================= */
 
   .page-header {
-    padding: 80px 0 70px;
+    padding: 120px 0 70px;
     margin-bottom: 40px;
   }
 
@@ -1093,7 +1042,7 @@
   }
 
   .page-header {
-    padding: 68px 0 58px;
+    padding: 110px 0 58px;
   }
 
   .page-header h1 {
@@ -1143,16 +1092,49 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo-text">TVK DIGITAL</div>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/developments.html" class="active">Developments</a>
-        <a href="/services.html">Services</a>
-        <a href="/ideology.html">Ideology</a>
-        <a href="/admin.html">Admin Login</a>
+  <!-- ======== HEADER ======== -->
+  <header id="main-header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img">
+        <div class="logo-text-group">
+          <span class="logo-title">TVK KARAIKUDI</span>
+          <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/developments.html" class="nav-link active">Developments</a>
+        <a href="/services.html" class="nav-link">Services</a>
+        <a href="/ideology.html" class="nav-link">Ideology</a>
+        <a href="/admin.html" class="nav-link nav-admin">Admin</a>
       </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="/developments.html" class="mob-link active">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        Developments
+      </a>
+      <a href="/services.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Services
+      </a>
+      <a href="/ideology.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+        Ideology
+      </a>
+      <a href="/admin.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Admin
+      </a>
     </div>
   </header>
 
@@ -1206,7 +1188,7 @@
             <h2>Updates from the ground</h2>
             <p>
               Development highlights and constituency activity are linked to the public Instagram source shared for
-              TVK Dr. Prabhu TK updates.
+              TVK Dr.T.K. Prabhu updates.
             </p>
             <div class="instagram-handle">◎ @drtkprabhutvk</div>
           </div>
@@ -1292,12 +1274,33 @@
             <!-- Video Card 1 -->
             <div class="news-card" data-category="welfare" data-reveal>
               <div class="news-image-wrapper">
+                <video src="/video_blood_donation.mp4" controls preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
+                <span class="news-badge">Welfare</span>
+              </div>
+              <div class="news-content">
+                <div class="news-date">
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></svg> June 10, 2026
+                </div>
+                <h3 class="news-title tamil-text">மனிதநேயத்தை போற்றும் இரத்த தானம் முகாம்</h3>
+                <p class="news-text">
+                  மனிதநேயத்தை போற்றும் வகையில் நடைபெற்ற இரத்த தான முகாமில் மாண்புமிகு Dr. T.K. Prabhu MLA அவர்கள் கலந்து கொண்டு நிகழ்ச்சியை சிறப்பித்தார். 🤝 தன்னார்வலர்கள் மற்றும் பொதுமக்கள் ஆர்வமுடன் பங்கேற்று இரத்த தானம் வழங்கினர். 🏥 அவசர காலங்களில் நோயாளிகளுக்கு உதவியது.
+                </p>
+                <div class="news-footer">
+                  <button class="news-read-more" onclick="alert('Blood Donation: Over 200 units collected, volunteers thanked, and patients supported.')">
+                    Read Update →
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Video Card 1 -->
+            <div class="news-card" data-category="welfare" data-reveal>
+              <div class="news-image-wrapper">
                 <video src="/video1.mp4" controls preload="metadata" style="width: 100%; height: 100%; object-fit: cover;"></video>
                 <span class="news-badge">Welfare</span>
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  🎥 June 15, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> June 15, 2026
                 </div>
                 <h3 class="news-title tamil-text">நலிவடைந்தோருக்கு நலத்திட்ட உதவிகள்!</h3>
                 <p class="news-text">
@@ -1319,7 +1322,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  🎥 June 18, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> June 18, 2026
                 </div>
                 <h3 class="news-title tamil-text">இலவச மருத்துவ & பல் பரிசோதனை முகாம்!</h3>
                 <p class="news-text">
@@ -1341,7 +1344,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  🎥 June 20, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> June 20, 2026
                 </div>
                 <h3 class="news-title tamil-text">கோடை கால குடிநீர் மற்றும் மோர் பந்தல்!</h3>
                 <p class="news-text">
@@ -1363,7 +1366,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  🎥 June 22, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> June 22, 2026
                 </div>
                 <h3 class="news-title tamil-text">மாணவர்களுக்கான கல்வி உதவித்தொகை!</h3>
                 <p class="news-text">
@@ -1385,7 +1388,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  📅 May 18, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 18, 2026
                 </div>
                 <h3 class="news-title tamil-text">மதுரை டிஜிட்டல் சேவை மையம் திறப்பு விழா!</h3>
                 <p class="news-text">
@@ -1407,7 +1410,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  📅 May 15, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 15, 2026
                 </div>
                 <h3 class="news-title tamil-text">இளையோர் திறன் மேம்பாட்டு மாநாடு!</h3>
                 <p class="news-text">
@@ -1429,7 +1432,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  📅 May 12, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 12, 2026
                 </div>
                 <h3 class="news-title tamil-text">மதுரை சாலை கட்டமைப்பு திட்டங்கள்!</h3>
                 <p class="news-text">
@@ -1451,7 +1454,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  📅 May 08, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 08, 2026
                 </div>
                 <h3 class="news-title tamil-text">பசுமை மதுரை திட்டம்!</h3>
                 <p class="news-text">
@@ -1473,7 +1476,7 @@
               </div>
               <div class="news-content">
                 <div class="news-date">
-                  📅 May 05, 2026
+                  <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> May 05, 2026
                 </div>
                 <h3 class="news-title tamil-text">தமிழக வெற்றி கழக மாநாடு!</h3>
                 <p class="news-text">
@@ -1513,7 +1516,7 @@
             category: 'ELECTION WIN',
             date: 'Instagram Source',
             image: '/real1.png',
-            text: 'தமிழக வெற்றி கழகத் தலைவர் தளபதி விஜய் அவர்கள், காரைக்குடியில் வரலாற்று வெற்றி பெற்ற சட்டமன்ற உறுப்பினர் Dr. பிரபு. TK அவர்களை வாழ்த்தி சான்றிதழ் வழங்கினார். TVK Leader Thalapathy Vijay congratulated Dr. Prabhu TK.'
+            text: 'தமிழக வெற்றி கழகத் தலைவர் தளபதி விஜய் அவர்கள், காரைக்குடியில் வரலாற்று வெற்றி பெற்ற சட்டமன்ற உறுப்பினர் Dr.T.K. Prabhu அவர்களை வாழ்த்தி சான்றிதழ் வழங்கினார். TVK Leader Thalapathy Vijay congratulated Dr.T.K. Prabhu.'
           },
           {
             title: 'Ground work and public service',
@@ -1821,5 +1824,6 @@
   <footer>
     <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
   </footer>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

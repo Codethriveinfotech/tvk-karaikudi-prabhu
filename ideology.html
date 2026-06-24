@@ -36,58 +36,7 @@
       font-family: 'Hind Madurai', sans-serif;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      padding: 15px 0;
-      background: rgba(198, 21, 27, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .logo-text {
-      color: white;
-      font-weight: 900;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--poster-yellow);
-    }
-
-    .nav-links a.active {
-      color: var(--poster-yellow);
-      border: 1px solid var(--poster-yellow);
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
+    /* Header styles deleted to use global style.css */
 
     main {
       padding: 0;
@@ -101,7 +50,7 @@
         radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 16%),
         linear-gradient(135deg, #6f0000 0%, var(--poster-red) 40%, #140404 100%);
       color: white;
-      padding: 56px 0 48px;
+      padding: 130px 0 48px;
       margin-bottom: 56px;
     }
 
@@ -752,7 +701,7 @@
   ========================= */
 
   .page-header {
-    padding: 78px 0 70px;
+    padding: 120px 0 70px;
     margin-bottom: 42px;
   }
 
@@ -879,7 +828,7 @@
   }
 
   .page-header {
-    padding: 68px 0 60px;
+    padding: 110px 0 60px;
   }
 
   .page-header h1 {
@@ -920,16 +869,49 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo-text">TVK DIGITAL</div>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/developments.html">Developments</a>
-        <a href="/services.html">Services</a>
-        <a href="/ideology.html" class="active">Ideology</a>
-        <a href="/admin.html">Admin Login</a>
+  <!-- ======== HEADER ======== -->
+  <header id="main-header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <img src="/tvkflag.png" alt="TVK Flag" class="logo-flag-img">
+        <div class="logo-text-group">
+          <span class="logo-title">TVK KARAIKUDI</span>
+          <span class="logo-sub">தமிழக வெற்றி கழகம்</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/developments.html" class="nav-link">Developments</a>
+        <a href="/services.html" class="nav-link">Services</a>
+        <a href="/ideology.html" class="nav-link active">Ideology</a>
+        <a href="/admin.html" class="nav-link nav-admin">Admin</a>
       </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="/developments.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        Developments
+      </a>
+      <a href="/services.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Services
+      </a>
+      <a href="/ideology.html" class="mob-link active">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .3 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/></svg>
+        Ideology
+      </a>
+      <a href="/admin.html" class="mob-link">
+        <svg class="real-icon-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Admin
+      </a>
     </div>
   </header>
 
@@ -1013,32 +995,118 @@
 
         <div class="values-grid">
           <div class="value-card">
-            <div class="value-icon">🏛️</div>
+            <div class="value-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="idvg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c6151b"/><stop offset="100%" stop-color="#8b0000"/></linearGradient></defs>
+                <rect width="56" height="56" rx="14" fill="url(#idvg1)"/>
+                <!-- parliament building -->
+                <rect x="10" y="30" width="36" height="16" rx="2" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="1.5"/>
+                <!-- columns -->
+                <rect x="14" y="26" width="4" height="20" rx="1" fill="white" opacity="0.8"/>
+                <rect x="20" y="26" width="4" height="20" rx="1" fill="white" opacity="0.8"/>
+                <rect x="26" y="26" width="4" height="20" rx="1" fill="white" opacity="0.8"/>
+                <rect x="32" y="26" width="4" height="20" rx="1" fill="white" opacity="0.8"/>
+                <rect x="38" y="26" width="4" height="20" rx="1" fill="white" opacity="0.8"/>
+                <!-- dome base -->
+                <rect x="8" y="24" width="40" height="4" rx="2" fill="#fece08"/>
+                <!-- dome -->
+                <ellipse cx="28" cy="20" rx="12" ry="8" fill="rgba(255,255,255,0.25)" stroke="#fece08" stroke-width="2"/>
+                <!-- flag on top -->
+                <line x1="28" y1="6" x2="28" y2="14" stroke="white" stroke-width="2"/>
+                <polygon points="28,7 36,10 28,13" fill="#fece08"/>
+                <!-- door -->
+                <rect x="25" y="37" width="6" height="9" rx="1" fill="rgba(0,0,0,0.3)"/>
+              </svg>
+            </div>
             <h3>Democracy</h3>
             <p>Commitment to democratic principles and citizen participation in governance.</p>
           </div>
           <div class="value-card alt">
-            <div class="value-icon">🌐</div>
+            <div class="value-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="idvg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c6151b"/><stop offset="100%" stop-color="#8b0000"/></linearGradient></defs>
+                <rect width="56" height="56" rx="14" fill="url(#idvg2)"/>
+                <!-- globe -->
+                <circle cx="28" cy="28" r="16" fill="none" stroke="white" stroke-width="2"/>
+                <ellipse cx="28" cy="28" rx="7" ry="16" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+                <line x1="12" y1="28" x2="44" y2="28" stroke="#fece08" stroke-width="1.5"/>
+                <line x1="14" y1="21" x2="42" y2="21" stroke="rgba(254,206,8,0.6)" stroke-width="1"/>
+                <line x1="14" y1="35" x2="42" y2="35" stroke="rgba(254,206,8,0.6)" stroke-width="1"/>
+                <!-- wifi signal -->
+                <path d="M22 14 Q28 10 34 14" fill="none" stroke="#fece08" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M19 17 Q28 12 37 17" fill="none" stroke="rgba(254,206,8,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="28" cy="17" r="2" fill="#fece08"/>
+              </svg>
+            </div>
             <h3>Technology</h3>
             <p>Leveraging innovation for transparent and efficient public services.</p>
           </div>
           <div class="value-card">
-            <div class="value-icon">தமிழ்</div>
+            <div class="value-icon"><span style="font-family: 'Hind Madurai', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--poster-red); letter-spacing: 1px;">தமிழ்</span></div>
             <h3>Tamil Pride</h3>
             <p>Respecting and promoting Tamil language, culture, and heritage.</p>
           </div>
           <div class="value-card alt">
-            <div class="value-icon">👥</div>
+            <div class="value-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="idvg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c6151b"/><stop offset="100%" stop-color="#8b0000"/></linearGradient></defs>
+                <rect width="56" height="56" rx="14" fill="url(#idvg4)"/>
+                <!-- people group -->
+                <!-- center person -->
+                <circle cx="28" cy="16" r="6" fill="white"/>
+                <path d="M17 38 Q17 27 28 27 Q39 27 39 38" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="1.5"/>
+                <!-- left person -->
+                <circle cx="13" cy="20" r="4.5" fill="rgba(255,255,255,0.7)"/>
+                <path d="M5 38 Q5 30 13 30 Q21 30 21 38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+                <!-- right person -->
+                <circle cx="43" cy="20" r="4.5" fill="rgba(255,255,255,0.7)"/>
+                <path d="M35 38 Q35 30 43 30 Q51 30 51 38" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+                <!-- heart below -->
+                <path d="M28,47 C28,47 22,42 22,38 a3 3 0 0 1 6,0 a3 3 0 0 1 6,0 C34,42 28,47 28,47z" fill="#fece08"/>
+              </svg>
+            </div>
             <h3>People First</h3>
             <p>Prioritizing citizen welfare and community development in all decisions.</p>
           </div>
           <div class="value-card">
-            <div class="value-icon">⚖️</div>
+            <div class="value-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="idvg5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c6151b"/><stop offset="100%" stop-color="#8b0000"/></linearGradient></defs>
+                <rect width="56" height="56" rx="14" fill="url(#idvg5)"/>
+                <!-- balance scale -->
+                <line x1="28" y1="10" x2="28" y2="44" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="11" y1="19" x2="45" y2="19" stroke="#fece08" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="13" y1="19" x2="10" y2="30" stroke="white" stroke-width="1.5"/>
+                <line x1="17" y1="19" x2="20" y2="30" stroke="white" stroke-width="1.5"/>
+                <rect x="9" y="29" width="12" height="4" rx="2" fill="white" opacity="0.9"/>
+                <line x1="39" y1="19" x2="36" y2="30" stroke="white" stroke-width="1.5"/>
+                <line x1="43" y1="19" x2="46" y2="30" stroke="white" stroke-width="1.5"/>
+                <rect x="35" y="29" width="12" height="4" rx="2" fill="#fece08" opacity="0.9"/>
+                <rect x="21" y="44" width="14" height="3" rx="1.5" fill="white" opacity="0.7"/>
+              </svg>
+            </div>
             <h3>Equality</h3>
             <p>Ensuring equal opportunities and justice for all communities.</p>
           </div>
           <div class="value-card alt">
-            <div class="value-icon">🌱</div>
+            <div class="value-icon">
+              <svg viewBox="0 0 56 56" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="idvg6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c6151b"/><stop offset="100%" stop-color="#8b0000"/></linearGradient></defs>
+                <rect width="56" height="56" rx="14" fill="url(#idvg6)"/>
+                <!-- leaf / sustainability -->
+                <path d="M28 44 Q28 30 42 18 Q42 18 42 18 Q30 16 20 22 Q12 28 16 38 Q20 46 28 44z" fill="rgba(255,255,255,0.25)" stroke="#fece08" stroke-width="2"/>
+                <path d="M28 44 Q28 30 14 18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <!-- sun -->
+                <circle cx="38" cy="14" r="5" fill="#fece08"/>
+                <line x1="38" y1="7" x2="38" y2="5" stroke="#fece08" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="43" y1="9" x2="45" y2="7" stroke="#fece08" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="45" y1="14" x2="47" y2="14" stroke="#fece08" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="43" y1="19" x2="45" y2="21" stroke="#fece08" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- drops -->
+                <circle cx="20" cy="38" r="2" fill="white" opacity="0.6"/>
+                <circle cx="24" cy="42" r="1.5" fill="white" opacity="0.5"/>
+              </svg>
+            </div>
             <h3>Sustainability</h3>
             <p>Environmental conservation and sustainable development practices.</p>
           </div>
@@ -1088,5 +1156,6 @@
   <footer>
     <p>&copy; 2026 Tamilaga Vettri Kazhagam. All rights reserved.</p>
   </footer>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -11,15 +11,17 @@
   <!-- Header / Navigation -->
   <header class="admin-topbar" style="position: sticky; width: 100%; top: 0; z-index: 1000; padding: 15px 0; background: rgba(198, 21, 27, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
     <div class="container admin-topbar-container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-      <div class="logo-text" style="color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; display: flex; align-items: center; gap: 10px;">
+      <a href="#" id="logo-home" class="logo-text" style="color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; display: flex; align-items: center; gap: 10px;">
+        <img src="/tvkflag.png" alt="TVK Flag" style="width: 30px; height: auto; border-radius: 4px;">
         <span style="background: var(--poster-yellow); color: var(--poster-red); padding: 2px 8px; border-radius: 4px; font-size: 0.9rem;">IT CELL</span>
         TVK ADMIN
-      </div>
+      </a>
+      <button id="menu-toggle" class="menu-toggle" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">
+        <i data-lucide="menu"></i>
+      </button>
       <nav class="nav-links admin-topbar-nav" style="display: flex; gap: 20px; align-items: center;">
         <a href="/" style="color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.75rem;">Public Site</a>
-        <button id="logout-btn" style="display: none; background: var(--poster-yellow); border: none; color: var(--black); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; padding: 6px 15px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;">
-          Logout
-        </button>
+        <button id="logout-btn" style="display: none; background: var(--poster-yellow); border: none; color: var(--black); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; padding: 6px 15px; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;">Logout</button>
       </nav>
     </div>
   </header>

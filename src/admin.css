@@ -276,9 +276,28 @@
   text-transform: uppercase;
   border-bottom: 1px solid #f3f4f6;
   letter-spacing: 0.5px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+  background-color: #f9fafb;
+  padding: 18px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4b5563;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f3f4f6;
+  letter-spacing: 0.5px;
 }
 
 .dashboard-table td {
+  padding: 18px 24px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+  vertical-align: middle;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
   padding: 18px 24px;
   font-size: 0.95rem;
   border-bottom: 1px solid #f3f4f6;
@@ -398,10 +417,23 @@
   border-radius: 24px;
   width: 100%;
   max-width: 650px;
+  max-height: 85vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: modalEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
+}
+  background-color: white;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: modalEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-header {
@@ -432,8 +464,15 @@
 }
 
 .modal-body {
+  color: var(--black);
   padding: 30px;
 }
+
+/* Responsive modal height */
+@media (max-width: 480px) {
+  .modal-content { max-height: 80vh; }
+}
+
 
 .modal-details-grid {
   display: grid;
@@ -467,6 +506,7 @@
   color: #4b5563;
   line-height: 1.5;
   white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 
 .grievance-photo-box {
@@ -590,38 +630,6 @@
     padding: 0 1rem !important;
   }
   .admin-topbar .logo-text {
-    font-size: 1.2rem !important;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .admin-topbar-nav {
-    width: 100%;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    gap: 14px !important;
-    scrollbar-width: none;
-  }
-  .admin-topbar-nav::-webkit-scrollbar {
-    display: none;
-  }
-  .admin-topbar-nav a,
-  .admin-topbar-nav button {
-    font-size: 0.72rem !important;
-    white-space: nowrap;
-  }
-  .admin-main {
-    padding: 20px 15px;
-  }
-  .dashboard-welcome h1 {
-    font-size: 1.8rem;
-  }
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  .modal-content {
     max-width: 95%;
   }
   .modal-body {
@@ -659,3 +667,16 @@
     justify-content: center;
   }
 }
+.admin-body, .admin-body * { color: #111827 !important; }
+
+/* Mobile table adjustments */
+@media (max-width: 480px) {
+  .dashboard-table th, .dashboard-table td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+  .dashboard-table th { white-space: nowrap; }
+  .dashboard-table td { white-space: normal; }
+}
+
+.admin-body a { color: var(--poster-red) !important; }

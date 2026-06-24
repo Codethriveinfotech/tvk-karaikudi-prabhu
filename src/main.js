@@ -1,5 +1,5 @@
 import './style.css'
-import { createIcons, Cpu, Layout, Smartphone, Users2, ClipboardList, MessageSquareMore, ShieldCheck, Clock, Target, Eye, Users, PhoneCall, Globe, MapPin, MessageSquarePlus, CheckCircle2, HandMetal, BrainCircuit, Shield, Quote, ArrowRight, Mic, ImagePlus, Search } from 'lucide'
+import { createIcons, Cpu, Layout, Smartphone, Users2, ClipboardList, MessageSquareMore, ShieldCheck, Clock, Target, Eye, Users, PhoneCall, Globe, MapPin, MessageSquarePlus, CheckCircle2, HandMetal, BrainCircuit, Shield, Quote, ArrowRight, Mic, ImagePlus, Search, Trophy, Award, Star, Landmark, Activity, Vote } from 'lucide'
 
 // Initialize Lucide Icons
 createIcons({
@@ -27,13 +27,19 @@ createIcons({
     ArrowRight,
     Mic,
     ImagePlus,
-    Search
+    Search,
+    Trophy,
+    Award,
+    Star,
+    Landmark,
+    Activity,
+    Vote
   }
 })
 
 // Set Hero Image (already set in HTML, this is a fallback)
 const heroImg = document.getElementById('hero-image')
-if (heroImg) heroImg.src = '/vijaysir.png'
+if (heroImg) heroImg.src = '/homefront.png'
 
 // Header Scroll Effect
 const header = document.querySelector('#main-header') || document.querySelector('header')
@@ -551,5 +557,41 @@ if (grievanceForm) {
       submitBtn.disabled = false
     }
   })
+}
+
+// Global mobile hamburger menu listener and logo navigation
+const initMobileMenuAndLogo = () => {
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (hamburger && mobileNav) {
+    const toggleMenu = () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+    };
+    hamburger.addEventListener('click', toggleMenu);
+    // Close mobile menu when a navigation link is clicked
+    mobileNav.querySelectorAll('.mob-link').forEach(link => {
+      link.addEventListener('click', () => {
+        // Ensure menu closes after navigation
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+  }
+
+  // Ensure logo click navigates to home page
+  const logoLink = document.querySelector('.logo-link');
+  if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+      // Force navigate to root
+      window.location.href = '/';
+    });
+  }
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMobileMenuAndLogo);
+} else {
+  initMobileMenuAndLogo();
 }
 
